@@ -12,23 +12,23 @@ import org.apache.avro.message.SchemaStore;
 
 @SuppressWarnings("all")
 @org.apache.avro.specific.AvroGenerated
-public class employee extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
-  private static final long serialVersionUID = 1189378738781154809L;
-  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"employee\",\"namespace\":\"com.rahul.kafka_schema_registry.dto\",\"fields\":[{\"name\":\"id\",\"type\":\"string\"},{\"name\":\"firstName\",\"type\":\"string\"},{\"name\":\"lastName\",\"type\":\"string\"},{\"name\":\"email\",\"type\":\"string\",\"default\":\"\"},{\"name\":\"dob\",\"type\":\"string\"},{\"name\":\"age\",\"type\":\"int\"}]}");
+public class Employee extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
+  private static final long serialVersionUID = 1718800577293770483L;
+  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"Employee\",\"namespace\":\"com.rahul.kafka_schema_registry.dto\",\"fields\":[{\"name\":\"id\",\"type\":\"string\"},{\"name\":\"firstName\",\"type\":\"string\"},{\"name\":\"lastName\",\"type\":\"string\"},{\"name\":\"email\",\"type\":\"string\",\"default\":\"\"},{\"name\":\"dob\",\"type\":\"string\"},{\"name\":\"age\",\"type\":\"int\"}]}");
   public static org.apache.avro.Schema getClassSchema() { return SCHEMA$; }
 
   private static SpecificData MODEL$ = new SpecificData();
 
-  private static final BinaryMessageEncoder<employee> ENCODER =
-      new BinaryMessageEncoder<employee>(MODEL$, SCHEMA$);
+  private static final BinaryMessageEncoder<Employee> ENCODER =
+      new BinaryMessageEncoder<Employee>(MODEL$, SCHEMA$);
 
-  private static final BinaryMessageDecoder<employee> DECODER =
-      new BinaryMessageDecoder<employee>(MODEL$, SCHEMA$);
+  private static final BinaryMessageDecoder<Employee> DECODER =
+      new BinaryMessageDecoder<Employee>(MODEL$, SCHEMA$);
 
   /**
    * Return the BinaryMessageDecoder instance used by this class.
    */
-  public static BinaryMessageDecoder<employee> getDecoder() {
+  public static BinaryMessageDecoder<Employee> getDecoder() {
     return DECODER;
   }
 
@@ -36,17 +36,17 @@ public class employee extends org.apache.avro.specific.SpecificRecordBase implem
    * Create a new BinaryMessageDecoder instance for this class that uses the specified {@link SchemaStore}.
    * @param resolver a {@link SchemaStore} used to find schemas by fingerprint
    */
-  public static BinaryMessageDecoder<employee> createDecoder(SchemaStore resolver) {
-    return new BinaryMessageDecoder<employee>(MODEL$, SCHEMA$, resolver);
+  public static BinaryMessageDecoder<Employee> createDecoder(SchemaStore resolver) {
+    return new BinaryMessageDecoder<Employee>(MODEL$, SCHEMA$, resolver);
   }
 
-  /** Serializes this employee to a ByteBuffer. */
+  /** Serializes this Employee to a ByteBuffer. */
   public java.nio.ByteBuffer toByteBuffer() throws java.io.IOException {
     return ENCODER.encode(this);
   }
 
-  /** Deserializes a employee from a ByteBuffer. */
-  public static employee fromByteBuffer(
+  /** Deserializes a Employee from a ByteBuffer. */
+  public static Employee fromByteBuffer(
       java.nio.ByteBuffer b) throws java.io.IOException {
     return DECODER.decode(b);
   }
@@ -63,7 +63,7 @@ public class employee extends org.apache.avro.specific.SpecificRecordBase implem
    * to their default values from the schema.  If that is desired then
    * one should use <code>newBuilder()</code>.
    */
-  public employee() {}
+  public Employee() {}
 
   /**
    * All-args constructor.
@@ -74,7 +74,7 @@ public class employee extends org.apache.avro.specific.SpecificRecordBase implem
    * @param dob The new value for dob
    * @param age The new value for age
    */
-  public employee(java.lang.CharSequence id, java.lang.CharSequence firstName, java.lang.CharSequence lastName, java.lang.CharSequence email, java.lang.CharSequence dob, java.lang.Integer age) {
+  public Employee(java.lang.CharSequence id, java.lang.CharSequence firstName, java.lang.CharSequence lastName, java.lang.CharSequence email, java.lang.CharSequence dob, java.lang.Integer age) {
     this.id = id;
     this.firstName = firstName;
     this.lastName = lastName;
@@ -208,36 +208,36 @@ public class employee extends org.apache.avro.specific.SpecificRecordBase implem
   }
 
   /**
-   * Creates a new employee RecordBuilder.
-   * @return A new employee RecordBuilder
+   * Creates a new Employee RecordBuilder.
+   * @return A new Employee RecordBuilder
    */
-  public static com.rahul.kafka_schema_registry.dto.employee.Builder newBuilder() {
-    return new com.rahul.kafka_schema_registry.dto.employee.Builder();
+  public static com.rahul.kafka_schema_registry.dto.Employee.Builder newBuilder() {
+    return new com.rahul.kafka_schema_registry.dto.Employee.Builder();
   }
 
   /**
-   * Creates a new employee RecordBuilder by copying an existing Builder.
+   * Creates a new Employee RecordBuilder by copying an existing Builder.
    * @param other The existing builder to copy.
-   * @return A new employee RecordBuilder
+   * @return A new Employee RecordBuilder
    */
-  public static com.rahul.kafka_schema_registry.dto.employee.Builder newBuilder(com.rahul.kafka_schema_registry.dto.employee.Builder other) {
-    return new com.rahul.kafka_schema_registry.dto.employee.Builder(other);
+  public static com.rahul.kafka_schema_registry.dto.Employee.Builder newBuilder(com.rahul.kafka_schema_registry.dto.Employee.Builder other) {
+    return new com.rahul.kafka_schema_registry.dto.Employee.Builder(other);
   }
 
   /**
-   * Creates a new employee RecordBuilder by copying an existing employee instance.
+   * Creates a new Employee RecordBuilder by copying an existing Employee instance.
    * @param other The existing instance to copy.
-   * @return A new employee RecordBuilder
+   * @return A new Employee RecordBuilder
    */
-  public static com.rahul.kafka_schema_registry.dto.employee.Builder newBuilder(com.rahul.kafka_schema_registry.dto.employee other) {
-    return new com.rahul.kafka_schema_registry.dto.employee.Builder(other);
+  public static com.rahul.kafka_schema_registry.dto.Employee.Builder newBuilder(com.rahul.kafka_schema_registry.dto.Employee other) {
+    return new com.rahul.kafka_schema_registry.dto.Employee.Builder(other);
   }
 
   /**
-   * RecordBuilder for employee instances.
+   * RecordBuilder for Employee instances.
    */
-  public static class Builder extends org.apache.avro.specific.SpecificRecordBuilderBase<employee>
-    implements org.apache.avro.data.RecordBuilder<employee> {
+  public static class Builder extends org.apache.avro.specific.SpecificRecordBuilderBase<Employee>
+    implements org.apache.avro.data.RecordBuilder<Employee> {
 
     private java.lang.CharSequence id;
     private java.lang.CharSequence firstName;
@@ -255,7 +255,7 @@ public class employee extends org.apache.avro.specific.SpecificRecordBase implem
      * Creates a Builder by copying an existing Builder.
      * @param other The existing Builder to copy.
      */
-    private Builder(com.rahul.kafka_schema_registry.dto.employee.Builder other) {
+    private Builder(com.rahul.kafka_schema_registry.dto.Employee.Builder other) {
       super(other);
       if (isValidValue(fields()[0], other.id)) {
         this.id = data().deepCopy(fields()[0].schema(), other.id);
@@ -284,10 +284,10 @@ public class employee extends org.apache.avro.specific.SpecificRecordBase implem
     }
 
     /**
-     * Creates a Builder by copying an existing employee instance
+     * Creates a Builder by copying an existing Employee instance
      * @param other The existing instance to copy.
      */
-    private Builder(com.rahul.kafka_schema_registry.dto.employee other) {
+    private Builder(com.rahul.kafka_schema_registry.dto.Employee other) {
             super(SCHEMA$);
       if (isValidValue(fields()[0], other.id)) {
         this.id = data().deepCopy(fields()[0].schema(), other.id);
@@ -328,7 +328,7 @@ public class employee extends org.apache.avro.specific.SpecificRecordBase implem
       * @param value The value of 'id'.
       * @return This builder.
       */
-    public com.rahul.kafka_schema_registry.dto.employee.Builder setId(java.lang.CharSequence value) {
+    public com.rahul.kafka_schema_registry.dto.Employee.Builder setId(java.lang.CharSequence value) {
       validate(fields()[0], value);
       this.id = value;
       fieldSetFlags()[0] = true;
@@ -348,7 +348,7 @@ public class employee extends org.apache.avro.specific.SpecificRecordBase implem
       * Clears the value of the 'id' field.
       * @return This builder.
       */
-    public com.rahul.kafka_schema_registry.dto.employee.Builder clearId() {
+    public com.rahul.kafka_schema_registry.dto.Employee.Builder clearId() {
       id = null;
       fieldSetFlags()[0] = false;
       return this;
@@ -367,7 +367,7 @@ public class employee extends org.apache.avro.specific.SpecificRecordBase implem
       * @param value The value of 'firstName'.
       * @return This builder.
       */
-    public com.rahul.kafka_schema_registry.dto.employee.Builder setFirstName(java.lang.CharSequence value) {
+    public com.rahul.kafka_schema_registry.dto.Employee.Builder setFirstName(java.lang.CharSequence value) {
       validate(fields()[1], value);
       this.firstName = value;
       fieldSetFlags()[1] = true;
@@ -387,7 +387,7 @@ public class employee extends org.apache.avro.specific.SpecificRecordBase implem
       * Clears the value of the 'firstName' field.
       * @return This builder.
       */
-    public com.rahul.kafka_schema_registry.dto.employee.Builder clearFirstName() {
+    public com.rahul.kafka_schema_registry.dto.Employee.Builder clearFirstName() {
       firstName = null;
       fieldSetFlags()[1] = false;
       return this;
@@ -406,7 +406,7 @@ public class employee extends org.apache.avro.specific.SpecificRecordBase implem
       * @param value The value of 'lastName'.
       * @return This builder.
       */
-    public com.rahul.kafka_schema_registry.dto.employee.Builder setLastName(java.lang.CharSequence value) {
+    public com.rahul.kafka_schema_registry.dto.Employee.Builder setLastName(java.lang.CharSequence value) {
       validate(fields()[2], value);
       this.lastName = value;
       fieldSetFlags()[2] = true;
@@ -426,7 +426,7 @@ public class employee extends org.apache.avro.specific.SpecificRecordBase implem
       * Clears the value of the 'lastName' field.
       * @return This builder.
       */
-    public com.rahul.kafka_schema_registry.dto.employee.Builder clearLastName() {
+    public com.rahul.kafka_schema_registry.dto.Employee.Builder clearLastName() {
       lastName = null;
       fieldSetFlags()[2] = false;
       return this;
@@ -445,7 +445,7 @@ public class employee extends org.apache.avro.specific.SpecificRecordBase implem
       * @param value The value of 'email'.
       * @return This builder.
       */
-    public com.rahul.kafka_schema_registry.dto.employee.Builder setEmail(java.lang.CharSequence value) {
+    public com.rahul.kafka_schema_registry.dto.Employee.Builder setEmail(java.lang.CharSequence value) {
       validate(fields()[3], value);
       this.email = value;
       fieldSetFlags()[3] = true;
@@ -465,7 +465,7 @@ public class employee extends org.apache.avro.specific.SpecificRecordBase implem
       * Clears the value of the 'email' field.
       * @return This builder.
       */
-    public com.rahul.kafka_schema_registry.dto.employee.Builder clearEmail() {
+    public com.rahul.kafka_schema_registry.dto.Employee.Builder clearEmail() {
       email = null;
       fieldSetFlags()[3] = false;
       return this;
@@ -484,7 +484,7 @@ public class employee extends org.apache.avro.specific.SpecificRecordBase implem
       * @param value The value of 'dob'.
       * @return This builder.
       */
-    public com.rahul.kafka_schema_registry.dto.employee.Builder setDob(java.lang.CharSequence value) {
+    public com.rahul.kafka_schema_registry.dto.Employee.Builder setDob(java.lang.CharSequence value) {
       validate(fields()[4], value);
       this.dob = value;
       fieldSetFlags()[4] = true;
@@ -504,7 +504,7 @@ public class employee extends org.apache.avro.specific.SpecificRecordBase implem
       * Clears the value of the 'dob' field.
       * @return This builder.
       */
-    public com.rahul.kafka_schema_registry.dto.employee.Builder clearDob() {
+    public com.rahul.kafka_schema_registry.dto.Employee.Builder clearDob() {
       dob = null;
       fieldSetFlags()[4] = false;
       return this;
@@ -523,7 +523,7 @@ public class employee extends org.apache.avro.specific.SpecificRecordBase implem
       * @param value The value of 'age'.
       * @return This builder.
       */
-    public com.rahul.kafka_schema_registry.dto.employee.Builder setAge(int value) {
+    public com.rahul.kafka_schema_registry.dto.Employee.Builder setAge(int value) {
       validate(fields()[5], value);
       this.age = value;
       fieldSetFlags()[5] = true;
@@ -543,16 +543,16 @@ public class employee extends org.apache.avro.specific.SpecificRecordBase implem
       * Clears the value of the 'age' field.
       * @return This builder.
       */
-    public com.rahul.kafka_schema_registry.dto.employee.Builder clearAge() {
+    public com.rahul.kafka_schema_registry.dto.Employee.Builder clearAge() {
       fieldSetFlags()[5] = false;
       return this;
     }
 
     @Override
     @SuppressWarnings("unchecked")
-    public employee build() {
+    public Employee build() {
       try {
-        employee record = new employee();
+        Employee record = new Employee();
         record.id = fieldSetFlags()[0] ? this.id : (java.lang.CharSequence) defaultValue(fields()[0]);
         record.firstName = fieldSetFlags()[1] ? this.firstName : (java.lang.CharSequence) defaultValue(fields()[1]);
         record.lastName = fieldSetFlags()[2] ? this.lastName : (java.lang.CharSequence) defaultValue(fields()[2]);
@@ -567,8 +567,8 @@ public class employee extends org.apache.avro.specific.SpecificRecordBase implem
   }
 
   @SuppressWarnings("unchecked")
-  private static final org.apache.avro.io.DatumWriter<employee>
-    WRITER$ = (org.apache.avro.io.DatumWriter<employee>)MODEL$.createDatumWriter(SCHEMA$);
+  private static final org.apache.avro.io.DatumWriter<Employee>
+    WRITER$ = (org.apache.avro.io.DatumWriter<Employee>)MODEL$.createDatumWriter(SCHEMA$);
 
   @Override public void writeExternal(java.io.ObjectOutput out)
     throws java.io.IOException {
@@ -576,8 +576,8 @@ public class employee extends org.apache.avro.specific.SpecificRecordBase implem
   }
 
   @SuppressWarnings("unchecked")
-  private static final org.apache.avro.io.DatumReader<employee>
-    READER$ = (org.apache.avro.io.DatumReader<employee>)MODEL$.createDatumReader(SCHEMA$);
+  private static final org.apache.avro.io.DatumReader<Employee>
+    READER$ = (org.apache.avro.io.DatumReader<Employee>)MODEL$.createDatumReader(SCHEMA$);
 
   @Override public void readExternal(java.io.ObjectInput in)
     throws java.io.IOException {

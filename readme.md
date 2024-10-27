@@ -140,3 +140,5 @@ Key dependencies in `pom.xml`:
 ## License
 
 This project is licensed under the MIT License. See the `LICENSE` file for details.
+
+reference: https://github.com/Java-Techie-jt/spring-kafka-avro/tree/main

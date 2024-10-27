@@ -13,8 +13,8 @@ import org.apache.avro.message.SchemaStore;
 @SuppressWarnings("all")
 @org.apache.avro.specific.AvroGenerated
 public class Employee extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
-  private static final long serialVersionUID = 1718800577293770483L;
-  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"Employee\",\"namespace\":\"com.rahul.kafka_schema_registry.dto\",\"fields\":[{\"name\":\"id\",\"type\":\"string\"},{\"name\":\"firstName\",\"type\":\"string\"},{\"name\":\"lastName\",\"type\":\"string\"},{\"name\":\"email\",\"type\":\"string\",\"default\":\"\"},{\"name\":\"dob\",\"type\":\"string\"},{\"name\":\"age\",\"type\":\"int\"}]}");
+  private static final long serialVersionUID = 156047813983048083L;
+  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"Employee\",\"namespace\":\"com.rahul.kafka_schema_registry.dto\",\"fields\":[{\"name\":\"id\",\"type\":\"string\"},{\"name\":\"firstName\",\"type\":\"string\"},{\"name\":\"lastName\",\"type\":\"string\"},{\"name\":\"emailId\",\"type\":\"string\",\"default\":\"\"},{\"name\":\"age\",\"type\":\"int\"}]}");
   public static org.apache.avro.Schema getClassSchema() { return SCHEMA$; }
 
   private static SpecificData MODEL$ = new SpecificData();
@@ -54,8 +54,7 @@ public class Employee extends org.apache.avro.specific.SpecificRecordBase implem
   @Deprecated public java.lang.CharSequence id;
   @Deprecated public java.lang.CharSequence firstName;
   @Deprecated public java.lang.CharSequence lastName;
-  @Deprecated public java.lang.CharSequence email;
-  @Deprecated public java.lang.CharSequence dob;
+  @Deprecated public java.lang.CharSequence emailId;
   @Deprecated public int age;
 
   /**
@@ -70,16 +69,14 @@ public class Employee extends org.apache.avro.specific.SpecificRecordBase implem
    * @param id The new value for id
    * @param firstName The new value for firstName
    * @param lastName The new value for lastName
-   * @param email The new value for email
-   * @param dob The new value for dob
+   * @param emailId The new value for emailId
    * @param age The new value for age
    */
-  public Employee(java.lang.CharSequence id, java.lang.CharSequence firstName, java.lang.CharSequence lastName, java.lang.CharSequence email, java.lang.CharSequence dob, java.lang.Integer age) {
+  public Employee(java.lang.CharSequence id, java.lang.CharSequence firstName, java.lang.CharSequence lastName, java.lang.CharSequence emailId, java.lang.Integer age) {
     this.id = id;
     this.firstName = firstName;
     this.lastName = lastName;
-    this.email = email;
-    this.dob = dob;
+    this.emailId = emailId;
     this.age = age;
   }
 
@@ -90,9 +87,8 @@ public class Employee extends org.apache.avro.specific.SpecificRecordBase implem
     case 0: return id;
     case 1: return firstName;
     case 2: return lastName;
-    case 3: return email;
-    case 4: return dob;
-    case 5: return age;
+    case 3: return emailId;
+    case 4: return age;
     default: throw new org.apache.avro.AvroRuntimeException("Bad index");
     }
   }
@@ -104,9 +100,8 @@ public class Employee extends org.apache.avro.specific.SpecificRecordBase implem
     case 0: id = (java.lang.CharSequence)value$; break;
     case 1: firstName = (java.lang.CharSequence)value$; break;
     case 2: lastName = (java.lang.CharSequence)value$; break;
-    case 3: email = (java.lang.CharSequence)value$; break;
-    case 4: dob = (java.lang.CharSequence)value$; break;
-    case 5: age = (java.lang.Integer)value$; break;
+    case 3: emailId = (java.lang.CharSequence)value$; break;
+    case 4: age = (java.lang.Integer)value$; break;
     default: throw new org.apache.avro.AvroRuntimeException("Bad index");
     }
   }
@@ -160,35 +155,19 @@ public class Employee extends org.apache.avro.specific.SpecificRecordBase implem
   }
 
   /**
-   * Gets the value of the 'email' field.
-   * @return The value of the 'email' field.
+   * Gets the value of the 'emailId' field.
+   * @return The value of the 'emailId' field.
    */
-  public java.lang.CharSequence getEmail() {
-    return email;
+  public java.lang.CharSequence getEmailId() {
+    return emailId;
   }
 
   /**
-   * Sets the value of the 'email' field.
+   * Sets the value of the 'emailId' field.
    * @param value the value to set.
    */
-  public void setEmail(java.lang.CharSequence value) {
-    this.email = value;
-  }
-
-  /**
-   * Gets the value of the 'dob' field.
-   * @return The value of the 'dob' field.
-   */
-  public java.lang.CharSequence getDob() {
-    return dob;
-  }
-
-  /**
-   * Sets the value of the 'dob' field.
-   * @param value the value to set.
-   */
-  public void setDob(java.lang.CharSequence value) {
-    this.dob = value;
+  public void setEmailId(java.lang.CharSequence value) {
+    this.emailId = value;
   }
 
   /**
@@ -242,8 +221,7 @@ public class Employee extends org.apache.avro.specific.SpecificRecordBase implem
     private java.lang.CharSequence id;
     private java.lang.CharSequence firstName;
     private java.lang.CharSequence lastName;
-    private java.lang.CharSequence email;
-    private java.lang.CharSequence dob;
+    private java.lang.CharSequence emailId;
     private int age;
 
     /** Creates a new Builder */
@@ -269,17 +247,13 @@ public class Employee extends org.apache.avro.specific.SpecificRecordBase implem
         this.lastName = data().deepCopy(fields()[2].schema(), other.lastName);
         fieldSetFlags()[2] = true;
       }
-      if (isValidValue(fields()[3], other.email)) {
-        this.email = data().deepCopy(fields()[3].schema(), other.email);
+      if (isValidValue(fields()[3], other.emailId)) {
+        this.emailId = data().deepCopy(fields()[3].schema(), other.emailId);
         fieldSetFlags()[3] = true;
       }
-      if (isValidValue(fields()[4], other.dob)) {
-        this.dob = data().deepCopy(fields()[4].schema(), other.dob);
+      if (isValidValue(fields()[4], other.age)) {
+        this.age = data().deepCopy(fields()[4].schema(), other.age);
         fieldSetFlags()[4] = true;
-      }
-      if (isValidValue(fields()[5], other.age)) {
-        this.age = data().deepCopy(fields()[5].schema(), other.age);
-        fieldSetFlags()[5] = true;
       }
     }
 
@@ -301,17 +275,13 @@ public class Employee extends org.apache.avro.specific.SpecificRecordBase implem
         this.lastName = data().deepCopy(fields()[2].schema(), other.lastName);
         fieldSetFlags()[2] = true;
       }
-      if (isValidValue(fields()[3], other.email)) {
-        this.email = data().deepCopy(fields()[3].schema(), other.email);
+      if (isValidValue(fields()[3], other.emailId)) {
+        this.emailId = data().deepCopy(fields()[3].schema(), other.emailId);
         fieldSetFlags()[3] = true;
       }
-      if (isValidValue(fields()[4], other.dob)) {
-        this.dob = data().deepCopy(fields()[4].schema(), other.dob);
+      if (isValidValue(fields()[4], other.age)) {
+        this.age = data().deepCopy(fields()[4].schema(), other.age);
         fieldSetFlags()[4] = true;
-      }
-      if (isValidValue(fields()[5], other.age)) {
-        this.age = data().deepCopy(fields()[5].schema(), other.age);
-        fieldSetFlags()[5] = true;
       }
     }
 
@@ -433,80 +403,41 @@ public class Employee extends org.apache.avro.specific.SpecificRecordBase implem
     }
 
     /**
-      * Gets the value of the 'email' field.
+      * Gets the value of the 'emailId' field.
       * @return The value.
       */
-    public java.lang.CharSequence getEmail() {
-      return email;
+    public java.lang.CharSequence getEmailId() {
+      return emailId;
     }
 
     /**
-      * Sets the value of the 'email' field.
-      * @param value The value of 'email'.
+      * Sets the value of the 'emailId' field.
+      * @param value The value of 'emailId'.
       * @return This builder.
       */
-    public com.rahul.kafka_schema_registry.dto.Employee.Builder setEmail(java.lang.CharSequence value) {
+    public com.rahul.kafka_schema_registry.dto.Employee.Builder setEmailId(java.lang.CharSequence value) {
       validate(fields()[3], value);
-      this.email = value;
+      this.emailId = value;
       fieldSetFlags()[3] = true;
       return this;
     }
 
     /**
-      * Checks whether the 'email' field has been set.
-      * @return True if the 'email' field has been set, false otherwise.
+      * Checks whether the 'emailId' field has been set.
+      * @return True if the 'emailId' field has been set, false otherwise.
       */
-    public boolean hasEmail() {
+    public boolean hasEmailId() {
       return fieldSetFlags()[3];
     }
 
 
     /**
-      * Clears the value of the 'email' field.
+      * Clears the value of the 'emailId' field.
       * @return This builder.
       */
-    public com.rahul.kafka_schema_registry.dto.Employee.Builder clearEmail() {
-      email = null;
+    public com.rahul.kafka_schema_registry.dto.Employee.Builder clearEmailId() {
+      emailId = null;
       fieldSetFlags()[3] = false;
-      return this;
-    }
-
-    /**
-      * Gets the value of the 'dob' field.
-      * @return The value.
-      */
-    public java.lang.CharSequence getDob() {
-      return dob;
-    }
-
-    /**
-      * Sets the value of the 'dob' field.
-      * @param value The value of 'dob'.
-      * @return This builder.
-      */
-    public com.rahul.kafka_schema_registry.dto.Employee.Builder setDob(java.lang.CharSequence value) {
-      validate(fields()[4], value);
-      this.dob = value;
-      fieldSetFlags()[4] = true;
-      return this;
-    }
-
-    /**
-      * Checks whether the 'dob' field has been set.
-      * @return True if the 'dob' field has been set, false otherwise.
-      */
-    public boolean hasDob() {
-      return fieldSetFlags()[4];
-    }
-
-
-    /**
-      * Clears the value of the 'dob' field.
-      * @return This builder.
-      */
-    public com.rahul.kafka_schema_registry.dto.Employee.Builder clearDob() {
-      dob = null;
-      fieldSetFlags()[4] = false;
       return this;
     }
 
@@ -524,9 +455,9 @@ public class Employee extends org.apache.avro.specific.SpecificRecordBase implem
       * @return This builder.
       */
     public com.rahul.kafka_schema_registry.dto.Employee.Builder setAge(int value) {
-      validate(fields()[5], value);
+      validate(fields()[4], value);
       this.age = value;
-      fieldSetFlags()[5] = true;
+      fieldSetFlags()[4] = true;
       return this;
     }
 
@@ -535,7 +466,7 @@ public class Employee extends org.apache.avro.specific.SpecificRecordBase implem
       * @return True if the 'age' field has been set, false otherwise.
       */
     public boolean hasAge() {
-      return fieldSetFlags()[5];
+      return fieldSetFlags()[4];
     }
 
 
@@ -544,7 +475,7 @@ public class Employee extends org.apache.avro.specific.SpecificRecordBase implem
       * @return This builder.
       */
     public com.rahul.kafka_schema_registry.dto.Employee.Builder clearAge() {
-      fieldSetFlags()[5] = false;
+      fieldSetFlags()[4] = false;
       return this;
     }
 
@@ -556,9 +487,8 @@ public class Employee extends org.apache.avro.specific.SpecificRecordBase implem
         record.id = fieldSetFlags()[0] ? this.id : (java.lang.CharSequence) defaultValue(fields()[0]);
         record.firstName = fieldSetFlags()[1] ? this.firstName : (java.lang.CharSequence) defaultValue(fields()[1]);
         record.lastName = fieldSetFlags()[2] ? this.lastName : (java.lang.CharSequence) defaultValue(fields()[2]);
-        record.email = fieldSetFlags()[3] ? this.email : (java.lang.CharSequence) defaultValue(fields()[3]);
-        record.dob = fieldSetFlags()[4] ? this.dob : (java.lang.CharSequence) defaultValue(fields()[4]);
-        record.age = fieldSetFlags()[5] ? this.age : (java.lang.Integer) defaultValue(fields()[5]);
+        record.emailId = fieldSetFlags()[3] ? this.emailId : (java.lang.CharSequence) defaultValue(fields()[3]);
+        record.age = fieldSetFlags()[4] ? this.age : (java.lang.Integer) defaultValue(fields()[4]);
         return record;
       } catch (java.lang.Exception e) {
         throw new org.apache.avro.AvroRuntimeException(e);

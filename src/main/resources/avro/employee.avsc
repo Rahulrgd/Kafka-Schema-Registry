@@ -17,12 +17,18 @@
         },
         {
             "name":"emailId",
-            "type":"string",
-            "default":""
+            "type":["null","string"],
+            "default":null
         },
         {
             "name":"age",
-            "type":"int"
+            "type":["null","int"],
+            "default":null
+        },
+        {
+            "name":"dob",
+            "type":["null","string"],
+            "default":null
         }
     ]
 }
